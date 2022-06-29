@@ -15,4 +15,9 @@ class HomeController extends Controller
     {
         return view('articles.show');
     }
+
+    public function editors()
+    {
+        return view('editors.index');
+    }
 }

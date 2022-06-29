@@ -8,7 +8,7 @@
         <div class="flex flex-col lg:flex-row">
             <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Article</a>
             <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Scope & Aim</a>
-            <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Editorial Member</a>
+            <a href="{{route('editors.index')}}" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Editorial Member</a>
             <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Author</a>
             <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Contact</a>
             <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Submission</a>

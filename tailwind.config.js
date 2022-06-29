@@ -14,6 +14,8 @@ module.exports = {
         day: '#FFF8F2',
         night: '#1C1C1C',
         cream: '#FFE8D6',
+        red: '#EF4444',
+        green: '#22C55E',
     },
     extend: {
         fontFamily: {

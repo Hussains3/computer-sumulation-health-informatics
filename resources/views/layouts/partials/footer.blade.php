@@ -14,10 +14,10 @@
         </div>
         <div class="justify-between w-full md:flex text-center lg:text-left">
             <div class="w-full px-4 lg:w-1/3 md:w-1/2">
-                <h2 class="mb-2 font-bold tracking-widest text-leaf">
+                <h2 class="mb-2 font-bold  text-leaf">
                     Useful Links
                 </h2>
-                <ul class="mb-8 space-y-2 text-sm list-none">
+                <ul class="mb-8 text-sm list-none">
                     <li>
                         <a class="text-gray-600 hover:text-gray-800">Home</a>
                     </li>
@@ -33,10 +33,10 @@
                 </ul>
             </div>
             <div class="w-full px-4 lg:w-1/3 md:w-1/2">
-                <h2 class="mb-2 font-bold tracking-widest text-leaf">
+                <h2 class="mb-2 font-bold  text-leaf">
                     Useful Links
                 </h2>
-                <ul class="mb-8 space-y-2 text-sm list-none">
+                <ul class="mb-8 text-sm list-none">
                     <li>
                         <a class="text-gray-600 hover:text-gray-800">Home</a>
                     </li>
@@ -52,10 +52,10 @@
                 </ul>
             </div>
             <div class="w-full px-4 lg:w-1/3 md:w-1/2">
-                <h2 class="mb-2 font-bold tracking-widest text-leaf">
+                <h2 class="mb-2 font-bold  text-leaf">
                     Useful Links
                 </h2>
-                <ul class="mb-8 space-y-2 text-sm list-none">
+                <ul class="mb-8 text-sm list-none">
                     <li>
                         <a class="text-gray-600 hover:text-gray-800">Home</a>
                     </li>
