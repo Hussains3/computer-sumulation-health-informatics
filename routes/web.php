@@ -21,3 +21,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/article/{article_slug}', 'HomeController@articleShow')->name('article.show');
     Route::get('/editors', 'HomeController@editors')->name('editors.index');
 });
+
+
+Route::group(['namespace' => 'App\Http\Controllers\Auth'], function()
+{
+    // Register
+    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register.show');
+    Route::post('/register', 'RegisterController@register')->name('register');
+
+    // Login
+});

@@ -1,80 +1,41 @@
 @extends('layouts.app')
-
+@section('title')
+Login
+@endsection
 @section('content')
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header brand-grad"><h1 class="fs-4 text-light mb-0">{{ __('Login') }}</h1></div>
+<div class="bg-night">
+    <div class="container mx-auto grid grid-cols-4">
+        <div class=""></div>
+        <div class="col-span-2 py-16 px-4 lg:px-0">
+            <h1 class="text-white uppercase text-2xl lg:mb-7">Login</h1>
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
+                <span class="text-leaf">Abailable</span>
+                <input type="text" class="form-input w-full my-2.5" name="username" id="username" placeholder="Username">
+                <span class="text-leaf">Abailable</span>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-warning">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <a class="btn btn-link" href="{{ route('register') }}">
-                                {{ __('Dont have a acount? Register') }}
-                            </a>
-                        </div>
-                    </form>
+                <input type="email" class="form-input w-full my-2.5" name="email" id="email" placeholder="Email">
+                <input type="password" class="form-input w-full my-2.5" name="password" id="password" placeholder="Password">
+                <input type="password" class="form-input w-full my-2.5" name="confirm_password" id="confirm_password" placeholder="Confirm Password">
+                <input type="checkbox" class="hidden border-none bg-leaf checked:bg-leaf mr-2" name="acceptTerms" id="acceptTerms">
+                <label for="acceptTerms" class="text-white">By signing up, you agree to the <a href="" class="text-leaf" target="_blank">Terms of Service and Privacy Policy</a> </label>
+                <div class="mt-6">
+                    <input type="submit" class="inline py-2 lg:py-4 px-5 lg:px-10 border border-leaf bg-leaf uppercase text-white mr-2 lg:mr-4" value="SIGN IN">
                 </div>
-            </div>
+                <div class="flex justify-between items-center mt-6">
+                    <p class="text-white ">Already have an account? <a href="" class="text-leaf">Sign In.</a></p>
+                    <div class="flex">
+                        <p class="text-white">Or, Register with ORCID</p>
+                        <a href="" class="mx-2"><img src="{{asset('images/icons/orchid.svg')}}" alt="ID"></a>
+                        <a href="" class="text-leaf underline">What is ORCID?</a>
+                    </div>
+                </div>
+            </form>
         </div>
+        <div class=""></div>
     </div>
 </div>
 @endsection
+@section('script')
 
+@endsection
