@@ -46,10 +46,6 @@ class RegisterController extends Controller
     }
 
 
-    public function showRegistrationForm()
-    {
-        return view('auth.register');
-    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -61,7 +57,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'user_name' => ['required', 'string', 'max:11','unique:users'],
+            'user_name' => ['required', 'string', 'max:100','unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -75,16 +71,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $user =  User::create([
-            'first_name' => $data['first_name'],
-            'last_name' => $data['last_name'],
+            'user_name' => $data['user_name'],
             'email' => $data['email'],
-            'phone' => $data['phone'],
-            'nib_number' => $data['nib_number'],
             'password' => Hash::make($data['password']),
         ]);
 
-        $role = Role::where('name','user')->get()->first();
-        $user->assignRole([$role->id]);
+        // $role = Role::where('name','user')->get()->first();
+        // $user->assignRole([$role->id]);
         return $user;
     }
 }

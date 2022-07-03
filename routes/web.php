@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 {
     Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/home', 'HomeController@index')->name('home.index');
     Route::get('/article/{article_slug}', 'HomeController@articleShow')->name('article.show');
     Route::get('/editors', 'HomeController@editors')->name('editors.index');
 });
@@ -26,7 +27,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 Route::group(['namespace' => 'App\Http\Controllers\Auth'], function()
 {
     // Register
-    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register.show');
+    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
     Route::post('/register', 'RegisterController@register')->name('register');
 
     // Login

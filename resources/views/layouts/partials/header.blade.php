@@ -14,7 +14,7 @@
             <a href="#" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Submission</a>
             <button class="px-3"><span class="iconify" data-icon="bi:search"></span></button>
             <button class="px-3 hidden lg:block"><span class="iconify" data-icon="charm:menu-hamburger"></span></button>
-            {{-- @auth
+            @auth
                 @if (Route::has('dashboard'))
                 <a href="{{route('dashboard')}}" class="text-night uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Dashboard</a>
                 @endif
@@ -28,7 +28,7 @@
                     <a href="{{ route('register') }}"
                     class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Register</a>
                 @endif
-            @endauth --}}
+            @endauth
         </div>
       </div>
     </div>
