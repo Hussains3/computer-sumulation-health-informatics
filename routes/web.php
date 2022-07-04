@@ -38,13 +38,16 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         // Dashboard
         Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard.index');
 
-        // Resourse
-        Route::resources([
-            'roles' => RoleController::class,
-            'users', UserController::class
-        ]);
+
 
     });
 });
+Route::group(['middleware' => ['auth']], function() {
 
+    // Resourse
+    Route::resources([
+        'roles' => RoleController::class,
+        'users', UserController::class
+    ]);
+});
 
