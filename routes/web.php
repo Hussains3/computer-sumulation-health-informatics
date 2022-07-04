@@ -21,6 +21,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/home', 'HomeController@index')->name('home.index');
     Route::get('/article/{article_slug}', 'HomeController@articleShow')->name('article.show');
     Route::get('/editors', 'HomeController@editors')->name('editors.index');
+
+    // Dashboard
+    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard.index');
+
 });
 
 

@@ -80,7 +80,7 @@
                 </div>
                 <div class="mt-4 lg:mt-0">
                     <div class="flex items-center">
-                        <img src="{{ asset('images/editor/editor.png') }}" class="rounded rounded-full mr-3" alt="Editor">
+                        <img src="{{ asset('images/editor/editor.png') }}" class=" rounded-full mr-3" alt="Editor">
                         <h3>Si Thu Aung, PhD</h3>
                     </div>
                     <p class="text-base text-night">Informatics in Medicine Unlocked (IMU) is an international gold open
@@ -201,7 +201,7 @@
                 </div>
                 <div class="">
                     <div class="flex items-center">
-                        <img src="{{ asset('images/editor/editor.png') }}" class="rounded rounded-full mr-3"
+                        <img src="{{ asset('images/editor/editor.png') }}" class="rounded-full mr-3"
                             alt="Editor">
                         <div class="">
                             <p>Editor</p>

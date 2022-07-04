@@ -20,4 +20,8 @@ class HomeController extends Controller
     {
         return view('editors.index');
     }
+
+    public function dashboard(){
+        return view('dashboard.index');
+    }
 }
