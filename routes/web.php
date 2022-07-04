@@ -43,12 +43,14 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
     });
 });
+
+
 Route::group(['middleware' => ['auth']], function() {
 
     // Resourse
     Route::resources([
         'roles' => RoleController::class,
-        'users', UserController::class
+        // 'users', UserController::class
     ]);
 });
 
