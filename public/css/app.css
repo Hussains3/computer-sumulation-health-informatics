@@ -784,9 +784,6 @@ select {
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
-.col-span-7 {
-  grid-column: span 7 / span 7;
-}
 .m-5 {
   margin: 1.25rem;
 }
@@ -922,6 +919,12 @@ select {
 .mb-0 {
   margin-bottom: 0px;
 }
+.ml-4 {
+  margin-left: 1rem;
+}
+.block {
+  display: block;
+}
 .inline-block {
   display: inline-block;
 }
@@ -985,6 +988,9 @@ select {
 .flex-shrink-0 {
   flex-shrink: 0;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 .grow {
   flex-grow: 1;
 }
@@ -1002,18 +1008,6 @@ select {
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-.grid-cols-12 {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-.grid-cols-10 {
-  grid-template-columns: repeat(10, minmax(0, 1fr));
-}
-.grid-cols-8 {
-  grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 .flex-col {
   flex-direction: column;
@@ -1103,6 +1097,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
+.bg-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 236 239 / var(--tw-bg-opacity));
+}
 .p-7 {
   padding: 1.75rem;
 }
@@ -1117,6 +1115,9 @@ select {
 }
 .p-0 {
   padding: 0px;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-4 {
   padding-left: 1rem;
@@ -1194,6 +1195,10 @@ select {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
 .pb-14 {
   padding-bottom: 3.5rem;
 }
@@ -1208,9 +1213,6 @@ select {
 }
 .pt-1 {
   padding-top: 0.25rem;
-}
-.pl-4 {
-  padding-left: 1rem;
 }
 .text-center {
   text-align: center;
@@ -1355,6 +1357,10 @@ select {
 .hover\:bg-transparent:hover {
   background-color: transparent;
 }
+.hover\:bg-gray:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 236 239 / var(--tw-bg-opacity));
+}
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1373,6 +1379,14 @@ select {
 }
 .hover\:decoration-2:hover {
   text-decoration-thickness: 2px;
+}
+.active\:bg-gray:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 236 239 / var(--tw-bg-opacity));
+}
+.active\:text-leaf:active {
+  --tw-text-opacity: 1;
+  color: rgb(0 168 150 / var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
 
@@ -1440,6 +1454,10 @@ select {
 
   .lg\:top-10 {
     top: 2.5rem;
+  }
+
+  .lg\:top-20 {
+    top: 5rem;
   }
 
   .lg\:my-16 {

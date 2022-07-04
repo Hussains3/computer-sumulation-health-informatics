@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['namespace' => 'App\Http\Controllers\Auth'], function()
+{
+    // Register
+    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
+    Route::post('/register', 'RegisterController@register')->name('register');
+
+    // Login
+    Route::get('/login', 'LoginController@showLoginForm')->name('login');
+    Route::post('/login', 'LoginController@login')->name('login');
+});
 
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
@@ -22,17 +33,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::get('/article/{article_slug}', 'HomeController@articleShow')->name('article.show');
     Route::get('/editors', 'HomeController@editors')->name('editors.index');
 
-    // Dashboard
-    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard.index');
+    Route::group(['middleware' => ['auth']], function() {
 
+        // Dashboard
+        Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard.index');
+
+        // Resourse
+        Route::resources([
+            'roles' => RoleController::class,
+            'users', UserController::class
+        ]);
+
+    });
 });
 
 
-Route::group(['namespace' => 'App\Http\Controllers\Auth'], function()
-{
-    // Register
-    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
-    Route::post('/register', 'RegisterController@register')->name('register');
-
-    // Login
-});

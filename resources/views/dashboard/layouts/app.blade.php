@@ -14,12 +14,13 @@
     @include('dashboard.layouts.partials.header')
 
     {{-- Page Content --}}
-    <div class="grid grid-cols-8">
+    <div class="flex">
         @include('dashboard.layouts.partials.leftsidemenu')
-        <div class="min-h-screen bg-leaf col-span-7">
+        <div class="min-h-screen bg-gray p-10 flex-grow">
+            @yield('content')
         </div>
     </div>
-    @yield('content')
+
     @include('dashboard.layouts.partials.scripts')
     @yield('script')
     <script>

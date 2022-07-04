@@ -24,6 +24,11 @@
                 e.preventDefault();
                 $("#mobileMenu").toggle();
             });
+            // Mobile Profile menu toggle
+            $("#mobileProfileMenuToggle").click(function (e) {
+                e.preventDefault();
+                $("#profileMenu").toggle();
+            });
         });
     </script>
 </body>
