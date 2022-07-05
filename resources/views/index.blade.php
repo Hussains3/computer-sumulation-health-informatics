@@ -145,21 +145,21 @@
                 research</h2>
             <div class="lg:grid grid-cols-1 lg:grid-cols-3 my-16">
                 <div class="letReserch hover:bg-night py-12 px-8 border border-night my-4 lg:my-0">
-                    <p class="mb-2 hover:underline hover:decoration-2 uppercase text-xl lg:text-2xl text-night">Informatics
+                    <p class="mb-2 hover:underline hover:decoration-2 uppercase text-xl lg:text-xl text-night">Informatics
                         in Medicine
                         Unlocked (IMU) is an international gold open access journal covering a broad spectrum of topics
                         within medical informatics</p>
                     <p class="text-sm text-leaf my-2">Mehedi Hassan et. al</p>
                 </div>
                 <div class="letReserch hover:bg-night py-12 px-8 border border-night my-4 lg:my-0">
-                    <p class="mb-2 hover:underline hover:decoration-2 uppercase text-xl lg:text-2xl text-night">Informatics
+                    <p class="mb-2 hover:underline hover:decoration-2 uppercase text-xl lg:text-xl text-night">Informatics
                         in Medicine
                         Unlocked (IMU) is an international gold open access journal covering a broad spectrum of topics
                         within medical informatics</p>
                     <p class="text-sm text-leaf my-2">Mehedi Hassan et. al</p>
                 </div>
                 <div class="letReserch hover:bg-night py-12 px-8 border border-night my-4 lg:my-0">
-                    <p class="mb-2 hover:underline hover:decoration-2 uppercase text-xl lg:text-2xl text-night">Informatics
+                    <p class="mb-2 hover:underline hover:decoration-2 uppercase text-xl lg:text-xl text-night">Informatics
                         in Medicine
                         Unlocked (IMU) is an international gold open access journal covering a broad spectrum of topics
                         within medical informatics</p>
@@ -231,7 +231,7 @@
         <div class="bg-cream">
             <div class="container mx-auto py-12">
                 <h2
-                    class="uppercase text-center underline decoration-night decoration-2 underline-offset-8 text-2xl lg:text-4xl">
+                    class="text-center hover:underline decoration-night decoration-2 underline-offset-4 text-2xl lg:text-4xl leading-loose">
                     <strong>Subscribe</strong> for Latest Article <br> and
                     Get notified of the best Journals
                 </h2>

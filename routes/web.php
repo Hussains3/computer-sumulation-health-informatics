@@ -3,6 +3,9 @@
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,42 +18,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'App\Http\Controllers\Auth'], function()
-{
-    // Register
-    Route::get('/register', 'RegisterController@showRegistrationForm')->name('register');
-    Route::post('/register', 'RegisterController@register')->name('register');
 
-    // Login
-    Route::get('/login', 'LoginController@showLoginForm')->name('login');
-    Route::post('/login', 'LoginController@login')->name('login');
-});
+// Register
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
+// Login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{
-    Route::get('/', 'HomeController@index')->name('home.index');
-    Route::get('/home', 'HomeController@index')->name('home.index');
-    Route::get('/article/{article_slug}', 'HomeController@articleShow')->name('article.show');
-    Route::get('/editors', 'HomeController@editors')->name('editors.index');
-
-    Route::group(['middleware' => ['auth']], function() {
-
-        // Dashboard
-        Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard.index');
-
-
-
-    });
-});
-
+Route::get('/', [HomeController::class,'index'])->name('home.index');
+Route::get('/home', [HomeController::class,'index'])->name('home.index');
+Route::get('/article/{article_slug}', [HomeController::class,'articleShow'])->name('article.show');
+Route::get('/editors', [HomeController::class,'editors'])->name('editors.index');
 
 Route::group(['middleware' => ['auth']], function() {
 
+    // Dashboard
+    Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard.index');
     // Resourse
-    Route::resources([
-        'roles' => RoleController::class,
-        // 'users', UserController::class
-    ]);
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
 });
+
+
 

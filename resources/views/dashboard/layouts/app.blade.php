@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>{{ config('app.name') }} | @yield('title')</title>
     @include('layouts.partials.font')
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @include('dashboard.layouts.partials.style')
     @yield('head_script')
 </head>
 

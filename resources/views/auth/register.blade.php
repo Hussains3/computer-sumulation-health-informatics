@@ -7,7 +7,7 @@ Register
     <div class="container mx-auto grid grid-cols-4">
         <div class=""></div>
         <div class="col-span-2 py-16 px-4 lg:px-0">
-            <h1 class="text-white uppercase text-2xl lg:mb-7">Registration {{Auth::id() ?? 'nai'}}</h1>
+            <h1 class="text-white uppercase text-2xl lg:mb-7">Registration</h1>
             <form method="POST" action="{{ route('register') }}" id="registerForm">
                 @csrf
                 @method('post')
