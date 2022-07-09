@@ -18,24 +18,23 @@
                 <tr>
                     <th>No</th>
                     <th>Name</th>
-                    <th class="text-right">Action</th>
+                    <th class="w-24">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($roles as $key => $role)
                 <tr>
-                    <td>{{ ++$i }}</td>
+                    <td>{{ $loop->index+1 }}</td>
                     <td>{{ $role->name }}</td>
-                    <td class="text-right">
-                        <a class="bg-green p-1 rounded-sm inline-block" href="{{ route('roles.show',$role->id) }}"><span class="iconify text-white hover:text-night" data-icon="akar-icons:eye"></span></a>
+                    <td class="text-right flex items-center justify-end w-24">
+                        <a class="bg-green p-1 rounded-sm inline-block mr-2" href="{{ route('roles.show',$role->id) }}"><span class="iconify text-white hover:text-night" data-icon="akar-icons:eye"></span></a>
                         @can('role-edit')
-                            <a class="bg-leaf p-1 rounded-sm inline-block" href="{{ route('roles.edit',$role->id) }}"><span class="iconify text-white hover:text-night" data-icon="clarity:note-edit-solid"></span></a>
+                            <a class="bg-leaf p-1 rounded-sm inline-block mr-2" href="{{ route('roles.edit',$role->id) }}"><span class="iconify text-white hover:text-night" data-icon="clarity:note-edit-solid"></span></a>
                         @endcan
                         @can('role-delete')
-                            <form action="{{route('roles.destroy', $role->id)}}" method="DELETE" class="inline-block mt-0">
+                            <form action="{{route('roles.destroy', $role->id)}}" class="inline-block" method="POST">
                                 @csrf
                                 @method('delete')
-                                <input type="hidden" name="id">
                                 <button type="submit" class="bg-red p-1 rounded-sm"><span class="iconify text-white hover:text-night" data-icon="dashicons:trash"></span></button>
                             </form>
                         @endcan
@@ -45,12 +44,12 @@
             </tbody>
         </table>
     </div>
-
-    {!! $roles->render() !!}
 </div>
 @endsection
 @section('script')
 <script>
-    $('#roleTable').dataTable();
+    $('#roleTable').DataTable({
+        paging: false
+    });
 </script>
 @endsection

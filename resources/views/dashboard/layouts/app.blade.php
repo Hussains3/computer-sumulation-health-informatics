@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
     <title>{{ config('app.name') }} | @yield('title')</title>
+
+
     @include('layouts.partials.font')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @include('dashboard.layouts.partials.style')
@@ -36,6 +39,8 @@
                 e.preventDefault();
                 $("#profileMenu").toggle();
             });
+            // $("#popNotification").delay(2000).fadeOut()
+            $('#popNotification').delay(500).fadeIn('fast').delay(3000).fadeOut('fast');
         });
     </script>
 </body>

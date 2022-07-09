@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,14 @@ Route::group(['middleware' => ['auth']], function() {
     // Resourse
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
+    Route::resource('permissions', PermissionController::class);
+
+    // Article
+    Route::group(['prefix' => 'articles'], function() {
+        Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
+        Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
+    });
+
 });
 
 
