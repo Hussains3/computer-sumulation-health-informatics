@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
 
     // Dashboard
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard.index');
+    Route::get('/submission', [HomeController::class, 'submission'])->name('submission');
     // Resourse
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);

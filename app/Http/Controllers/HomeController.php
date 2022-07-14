@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ArticleType;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,5 +24,11 @@ class HomeController extends Controller
 
     public function dashboard(){
         return view('dashboard.index');
+    }
+
+    public function submission()
+    {
+        $articleTypes = ArticleType::all();
+        return view('submission',compact('articleTypes'));
     }
 }
