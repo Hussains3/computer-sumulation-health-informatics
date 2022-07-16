@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <main class="min-h-screen ">
-        <div class="container mx-auto grid grid-cols-5 py-7 gap-3">
+        <div class="container mx-auto grid grid-cols-5 py-7">
             <div class="text-sm">
                 <p>Choose the Article Type your submission form dropdown menu.</p>
                 <a href="" class="text-leaf hover:text-leaf">How do I submit a menuscript?</a>
@@ -21,9 +21,8 @@
                 </ul>
                 <div class="py-4">
                     <h1 class="font-bold mb-4">Select Article Types</h1>
-                    <form action="{{route('articles.submissionOne')}}" method="post">
-                        @csrf
-                        <select name="articleType" id="articleType" required>
+                    <form action="" method="post">
+                        <select name="articleType" id="articleType">
                             <option value="">Select One</option>
                             @foreach ($articleTypes as $type)
                             <option value="{{$type->id}}" class="">{{$type->name}}</option>

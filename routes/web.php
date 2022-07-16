@@ -48,6 +48,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::group(['prefix' => 'articles'], function() {
         Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
         Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
+        Route::post('/submissionOne', [ArticleController::class, 'submissionOne'])->name('articles.submissionOne');
+        Route::get('/substpetwo', [ArticleController::class, 'substpetwo'])->name('substpetwo');
+        Route::post('/submissionTwo', [ArticleController::class, 'submissionTwo'])->name('articles.submissionTwo');
+        Route::get('/substpethree', [ArticleController::class, 'substpethree'])->name('substpethree');
+        Route::post('/submissionThree', [ArticleController::class, 'submissionThree'])->name('articles.submissionThree');
     });
 
 });
