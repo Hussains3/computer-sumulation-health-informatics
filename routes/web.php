@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ArticleTypeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ReviwerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('users', UserController::class);
     Route::resource('permissions', PermissionController::class);
     Route::resource('articletypes', ArticleTypeController::class);
+    Route::resource('reviwers', ReviwerController::class);
 
     // Article
     Route::group(['prefix' => 'articles'], function() {

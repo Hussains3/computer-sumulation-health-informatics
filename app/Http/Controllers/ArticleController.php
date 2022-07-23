@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Http\Requests\StoreArticleRequest;
 use App\Http\Requests\UpdateArticleRequest;
+use App\Models\Reviwer;
 use Illuminate\Http\Request;
 class ArticleController extends Controller
 {
@@ -112,7 +113,8 @@ class ArticleController extends Controller
 
     public function substpethree()
     {
-        return view('submissionthree');
+        $reviwers = Reviwer::all();
+        return view('submissionthree',compact('reviwers'));
     }
 
 
