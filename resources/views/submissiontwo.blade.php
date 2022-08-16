@@ -37,8 +37,9 @@
                 </ul>
                 <div class="py-4">
                     <h1 class="font-bold mb-4">Attacth Required Files</h1>
-                    <form action="{{route('articles.submissionTwo')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('submissionTwo')}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="this_submission" value="{{$submission}}">
                         {{-- Cover letter --}}
                         <div class="border border-gray px-4 py-4 mb-4 flex flex-col">
                             <label for="cover_letter">Cover Letter <span class="text-red">*</span></label>

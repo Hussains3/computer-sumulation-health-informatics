@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Submission;
 use App\Http\Requests\StoreSubmissionRequest;
 use App\Http\Requests\UpdateSubmissionRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SubmissionController extends Controller
 {
@@ -17,6 +19,19 @@ class SubmissionController extends Controller
     {
         //
     }
+    /**
+     * Submission step one, article type and unique id
+    */
+    public function submissionOne(Request $request)
+    {
+        $submission = new Submission();
+        $submission->submission_id = "CSHISUB".Auth::id().date('ymds');
+        $submission->type_id = $request->articleType;
+        $submission->save();
+        return view('submissiontwo',compact('submission'));
+    }
+
+    
 
     /**
      * Show the form for creating a new resource.

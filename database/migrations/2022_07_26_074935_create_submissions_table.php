@@ -28,6 +28,10 @@ return new class extends Migration
             $table->longText('abstract')->nullable();
             $table->longText('keywords')->nullable();
             $table->longText('funding')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
             $table->timestamps();
         });
     }

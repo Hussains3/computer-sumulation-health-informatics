@@ -11,6 +11,7 @@ use App\Http\Controllers\ArticleTypeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ReviwerController;
 use App\Http\Controllers\SubmissionController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,11 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 // Login
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+// Logout
+Route::get('logout', function (){
+    Auth::logout();
+    return redirect('/login');
+})->name('logout');
 
 Route::get('/', [HomeController::class,'index'])->name('home.index');
 Route::get('/home', [HomeController::class,'index'])->name('home.index');
@@ -47,15 +53,13 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('articletypes', ArticleTypeController::class);
     Route::resource('reviwers', ReviwerController::class);
 
-    // Article
-    Route::group(['prefix' => 'articles'], function() {
-        Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
-        Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
-        Route::post('/submissionOne', [SubmissionController::class, 'submissionOne'])->name('articles.submissionOne');
+    // Submission
+    Route::group(['prefix' => 'submission'], function() {
+        Route::post('/submissionOne', [SubmissionController::class, 'submissionOne'])->name('submissionOne');
         Route::get('/substpetwo', [SubmissionController::class, 'substpetwo'])->name('substpetwo');
-        Route::post('/submissionTwo', [SubmissionController::class, 'submissionTwo'])->name('articles.submissionTwo');
+        Route::post('/submissionTwo', [SubmissionController::class, 'submissionTwo'])->name('submissionTwo');
         Route::get('/substpethree', [SubmissionController::class, 'substpethree'])->name('substpethree');
-        Route::post('/submissionThree', [SubmissionController::class, 'submissionThree'])->name('articles.submissionThree');
+        Route::post('/submissionThree', [SubmissionController::class, 'submissionThree'])->name('submissionThree');
     });
 
 });

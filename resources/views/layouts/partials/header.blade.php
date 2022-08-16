@@ -14,20 +14,15 @@
             <a href="{{route('submission')}}" class="text-night  uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Submission</a>
             <button class="px-3"><span class="iconify" data-icon="bi:search"></span></button>
             <button class="px-3" id="mobileProfileMenuToggle"><span class="iconify text-3xl" data-icon="healthicons:ui-user-profile"></span></button>
-            <div class="hidden absolute right-0 bg-night top-14 lg:top-20" id="profileMenu">
+            <div class="hidden absolute z-50 right-0 bg-night top-14 lg:top-20" id="profileMenu">
                 <ul class="text-sm text-white p-4">
                     @auth
                         @if (Route::has('profile'))
                         <li><a href="{{route('profile')}}" class="hover:text-leaf uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Profile</a></li>
                         @endif
-                        @if (Route::has('dashboard'))
+                        @if (Route::has('dashboard.index'))
                         <li>
-                            <a href="{{route('dashboard')}}" class="hover:text-leaf uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Dashboard</a>
-                        </li>
-                        @endif
-                        @if (Route::has('logout'))
-                        <li>
-                            <a href="{{route('logout')}}" class="hover:text-leaf uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Dashboard</a>
+                            <a href="{{route('dashboard.index')}}" class="hover:text-leaf uppercase hover:underline hover:decoration-leaf hover:decoration-2 underline-offset-8 px-3 py-2  text-base font-bold">Dashboard</a>
                         </li>
                         @endif
                         @if (Route::has('logout'))

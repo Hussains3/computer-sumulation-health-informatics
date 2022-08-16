@@ -21,7 +21,7 @@
                 </ul>
                 <div class="py-4">
                     <h1 class="font-bold mb-4">Select Article Types</h1>
-                    <form action="{{route('articles.submissionOne')}}" method="post">
+                    <form action="{{route('submissionOne')}}" method="post">
                         @csrf
                         <select name="articleType" id="articleType" required>
                             <option value="">Select One</option>
