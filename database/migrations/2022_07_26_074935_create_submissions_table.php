@@ -32,6 +32,7 @@ return new class extends Migration
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users');
+            $table->unsignedTinyInteger('status')->default(1)->comment('1=>Drafted,2=>Submited');
             $table->timestamps();
         });
     }
